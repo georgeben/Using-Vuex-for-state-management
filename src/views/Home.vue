@@ -8,8 +8,6 @@
 
     <section class="cart">
       <ShoppingCart />
-
-      <button @click="show">Click</button>
     </section>
     
   </div>
@@ -23,9 +21,7 @@ import shop from '../api/shop';
 export default {
   name: 'home',
   methods: {
-    show(){
-      console.log(this.products)
-    }
+    
   },
   components: {
     ProductItem,

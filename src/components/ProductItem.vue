@@ -6,14 +6,19 @@
             <h5>N{{product.price}}</h5>
         </div>
         <p>{{product.description}}</p>
-        <button class="btn">Add To Cart</button>
+        <button @click="addProductToCart" class="btn">Add To Cart</button>
     </div>
 </template>
 
 <script>
 export default {
     name: 'ProductItem',
-    props: ['product']
+    props: ['product'],
+    methods: {
+        addProductToCart(){
+            this.$store.commit('addToCart', this.product);
+        }
+    }
 }
 </script>
 <style scoped>

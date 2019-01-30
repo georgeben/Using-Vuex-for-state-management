@@ -7,10 +7,14 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     state: {
         products: [],
+        cart: [],
     },
     mutations: {
         addProducts: (state, products) => {
             state.products = products;
+        },
+        addToCart: (state, product) => {
+            state.cart.push(product);
         }
     },
     actions: {

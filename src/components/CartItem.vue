@@ -4,18 +4,26 @@
             <img src="../assets/shoe.jpg" alt="Failed to load image">
         </div>
         <div class="detail">
-            <h5>Sneakers</h5>
-            <p>Grey and blue sneakers with white sole.</p>
+            <h5>{{item.name}}</h5>
+            <p>{{item.description}}</p>
             <div class="quantity">
                 <label for="quantity">Quantity</label>
                 <button>+</button>
                 <input type="number" id="quantity">
                 <button>-</button>
             </div>
+            <p>N{{item.price}}</p>
             <button class="btn remove-btn">Remove from cart</button>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'CartItem',
+    props: ['item'],
+}
+</script>
 
 <style scoped>
 .cart-item{

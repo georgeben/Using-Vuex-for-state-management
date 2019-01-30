@@ -1,15 +1,29 @@
 <template>
   <div class="home">
-    <p>This is the home page</p>
+    <ProductItem />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import ProductItem from '../components/ProductItem.vue';
 
 export default {
   name: 'home',
   components: {
+    ProductItem,
   },
 }
 </script>
+
+<style>
+.home{
+  padding: 10px;
+}
+
+.card{
+  background-color: #fff;
+  box-shadow: 1px 1px 2px #777;
+  padding: 5px;
+}
+</style>
+

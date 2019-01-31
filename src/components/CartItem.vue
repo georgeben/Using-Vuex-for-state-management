@@ -13,7 +13,7 @@
                 <button>-</button>
             </div>
             <p>N{{item.price}}</p>
-            <button class="btn remove-btn">Remove from cart</button>
+            <button @click="removeProductFromCart" class="btn remove-btn">Remove from cart</button>
         </div>
     </div>
 </template>
@@ -22,6 +22,12 @@
 export default {
     name: 'CartItem',
     props: ['item'],
+    methods: {
+        removeProductFromCart(){
+            console.log("About to remove", this.item.id)
+            this.$store.commit('removeFromCart', this.item.id)
+        }
+    }
 }
 </script>
 

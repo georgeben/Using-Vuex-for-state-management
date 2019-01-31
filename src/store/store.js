@@ -15,6 +15,13 @@ const store = new Vuex.Store({
         },
         addToCart: (state, product) => {
             state.cart.push(product);
+        },
+        removeFromCart(state, id){
+            state.cart.forEach((item, index) => {
+                if(item.id == id){
+                    state.cart.splice(index, 1);
+                }
+            })
         }
     },
     actions: {

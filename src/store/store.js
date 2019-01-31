@@ -14,6 +14,10 @@ const store = new Vuex.Store({
             state.products = products;
         },
         addToCart: (state, product) => {
+            if(state.cart.includes(product)){
+                console.log("Already exists")
+                return;
+            }
             state.cart.push(product);
         },
         removeFromCart(state, id){

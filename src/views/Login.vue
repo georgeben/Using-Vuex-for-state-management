@@ -35,6 +35,7 @@ export default {
                 if(user.password === this.password){
                     console.log("Successfully logged in");
                     localStorage.setItem('user', JSON.stringify(user))
+                    this.$router.push('/dashboard')
                 }else{
                     console.log("Wrong password");
                 }

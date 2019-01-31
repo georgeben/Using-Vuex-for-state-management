@@ -24,6 +24,15 @@ const products = [
     }
 ];
 
+const users = [
+    {
+        id: 1,
+        name: 'George Benjamin',
+        email: 'msdcconnect@gmail.com',
+        password: 'george',
+    },
+]
+
 export default {
     getAllProducts(){
         return products;
@@ -41,5 +50,13 @@ export default {
 
     removeProduct(id){
         products = products.reduce((product) => product.id !== id);
+    },
+
+    getUserById(id){
+        return users.reduce(user => user.id != id)
+    },
+
+    getUserByEmail(email){
+        return users.reduce(user => user.email != email)
     }
 }

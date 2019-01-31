@@ -22,7 +22,25 @@ const store = new Vuex.Store({
                     state.cart.splice(index, 1);
                 }
             })
-        }
+        },
+        increaseQuantity(state, id){
+            console.log("Increase quantity mutation")
+            state.cart.forEach((item) => {
+                if(item.id == id){
+                    item.quantity++
+                    console.log(item)
+                }
+            })
+        },
+        decreaseQuantity(state, id){
+            console.log("Increase quantity mutation")
+            state.cart.forEach((item) => {
+                if(item.id == id){
+                    item.quantity--
+                    console.log(item)
+                }
+            })
+        },
     },
     actions: {
         getAllProducts: (context) => {
@@ -31,7 +49,15 @@ const store = new Vuex.Store({
         }
     },
     getters: {
+        cartTotal(state){
+            let total = 0;
+            state.cart.forEach(item => {
 
+                total+= (item.price * item.quantity)
+            });
+
+            return total;
+        }
     },
 });
 

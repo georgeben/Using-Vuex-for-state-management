@@ -6,18 +6,21 @@ const products = [
         name: 'Sneakers',
         description: 'Grey and blue sneakers with white sole.',
         price: 3000,
+        quantity: 1,
     },
     {
         id: 2,
         name: 'Shorts',
         description: 'GNice blue shorts for men.',
         price: 3000,
+        quantity: 1,
     },
     {
         id: 3,
         name: 'Jacket',
         description: 'Brown gucci jacket with grey lining.',
         price: 3000,
+        quantity: 1,
     }
 ];
 

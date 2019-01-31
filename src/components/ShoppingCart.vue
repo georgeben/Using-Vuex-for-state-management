@@ -6,7 +6,7 @@
             <CartItem v-bind:item="item" />
         </div>
 
-        <p>Total: 500</p>
+        <p>Total: {{cartTotal}}</p>
         <button @click="show" class="btn">Checkout</button>
     </div>
 </template>
@@ -25,6 +25,9 @@ export default {
     computed: {
         cartItems(){
             return this.$store.state.cart;
+        },
+        cartTotal(){
+            return this.$store.getters.cartTotal
         }
     },
     components: {

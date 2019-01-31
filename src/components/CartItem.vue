@@ -8,9 +8,9 @@
             <p>{{item.description}}</p>
             <div class="quantity">
                 <label for="quantity">Quantity</label>
-                <button>+</button>
-                <input type="number" id="quantity">
-                <button>-</button>
+                <button @click="increaseQuantity">+</button>
+                <p>{{item.quantity}}</p>
+                <button @click="decreaseQuantity">-</button>
             </div>
             <p>N{{item.price}}</p>
             <button @click="removeProductFromCart" class="btn remove-btn">Remove from cart</button>
@@ -26,6 +26,19 @@ export default {
         removeProductFromCart(){
             console.log("About to remove", this.item.id)
             this.$store.commit('removeFromCart', this.item.id)
+        },
+        increaseQuantity(){
+            console.log("About to increase by 1");
+            this.$store.commit('increaseQuantity', this.item.id)
+        },
+        decreaseQuantity(){
+            if(this.item.quantity > 1){
+                console.log("About to decrease by 1");
+                this.$store.commit('decreaseQuantity', this.item.id)
+            }else{
+                console.log("Cannot reduce qty any more")
+            }
+            
         }
     }
 }

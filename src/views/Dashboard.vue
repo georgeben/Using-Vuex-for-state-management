@@ -5,6 +5,12 @@
         <button data-toggle="modal" data-target="#exampleModal">Add product</button>
         <button @click="show">Show</button>
 
+        <div class="products" >
+            <div v-for="product in products" v-bind:key="product.id">
+                <ProductItem class="product-item" v-bind:product="product" v-bind:modify="true" />
+            </div>
+        </div>
+
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -44,6 +50,7 @@
 
 <script>
 import shop from '../api/shop';
+import ProductItem from '../components/ProductItem.vue';
 export default {
     name: 'Dashboard',
     data(){
@@ -87,6 +94,7 @@ export default {
                 quantity: 1
             });
             this.clearInputs();
+            $('#exampleModal').modal('hide')
         },
         show(){
             console.log(this.products)
@@ -107,6 +115,14 @@ export default {
     },
     created(){
         this.$store.dispatch('getAllProducts');
+    },
+    components: {
+        ProductItem,
     }
 }
 </script>
+
+<style scoped>
+
+</style>
+

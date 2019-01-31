@@ -50,7 +50,11 @@ export default {
     },
 
     removeProduct(id){
-        products = products.reduce((product) => product.id !== id);
+        products.forEach((item, index) => {
+            if(item.id == id){
+                products.splice(index, 1);
+            }
+        })
     },
 
     getUserById(id){

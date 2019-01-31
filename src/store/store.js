@@ -45,6 +45,9 @@ const store = new Vuex.Store({
                 }
             })
         },
+        removeProduct(state, id){
+            shop.removeProduct(id)
+        }
     },
     actions: {
         getAllProducts: (context) => {

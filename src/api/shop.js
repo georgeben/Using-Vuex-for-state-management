@@ -39,7 +39,8 @@ export default {
     },
 
     addNewProduct({name, description, price}){
-        last_id = products[-1].id;
+        console.log("Last product", products[products.length-1])
+        let last_id = products[products.length-1].id;
         products.push({
             id: ++last_id,
             name,

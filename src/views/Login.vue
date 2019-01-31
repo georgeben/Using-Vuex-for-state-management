@@ -38,9 +38,11 @@ export default {
                     this.$router.push('/dashboard')
                 }else{
                     console.log("Wrong password");
+                    this.error = "You entered a wrong password";
                 }
             }else{
                 console.log("User does not exist")
+                console.log("Wrog details")
             }
         }
     }

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue';
 import Login from './views/Login.vue';
 import Dashboard from './views/Dashboard.vue';
+import UpdateItem from './components/UpdateItem.vue';
 
 Vue.use(Router)
 
@@ -30,6 +31,14 @@ let router = new Router({
         requiresAuth: true,
       }
     },
+    {
+      path: '/update/:id',
+      name: 'UpdateItem',
+      component: UpdateItem,
+      meta: {
+        requiresAuth: true,
+      }
+    }
   ]
 })
 

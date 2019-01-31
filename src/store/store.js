@@ -47,6 +47,10 @@ const store = new Vuex.Store({
         },
         removeProduct(state, id){
             shop.removeProduct(id)
+        },
+        updateProduct(state, id, product){
+            console.log("Mutation trying to update ", id)
+            shop.updateProduct(id, product);
         }
     },
     actions: {
